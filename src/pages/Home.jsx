@@ -45,6 +45,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
+  
       {/* 1. БАННЕР БӨЛҮМҮ (Hero Section) */}
       <section className="hero-section">
         <div className="hero-overlay"></div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
+import Loading from '../components/Loading/Loading';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -36,10 +37,7 @@ const Portfolio = () => {
 
   if (loading) {
     return (
-      <div className="portfolio-loading">
-        <div className="spinner"></div>
-        <p>Жүктөлүүдө...</p>
-      </div>
+       <Loading/>
     );
   }
 

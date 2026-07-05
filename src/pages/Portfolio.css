@@ -1,94 +1,226 @@
+/* Жалпы баракчанын стили */
 .portfolio-page {
-  padding: 40px 20px;
-  background-color: #111;
-  color: #fff;
+  padding: 0 0 60px 0;
+  background-color: #0b0b0b; /* Кара премиум фон */
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
 }
 
+/* 1. ҮСТҮНКҮ БАННЕР (HERO SECTION) */
+.portfolio-hero {
+  position: relative;
+  height: 400px;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* Тексттер даана көрүнүшү үчүн караңгылатуу */
+  z-index: 1;
+}
+
+.portfolio-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.portfolio-hero-content h1 { 
+  font-size: 42px;         /* Эки сөздү тең бирдей чоң жана даана кылдык */
+  font-weight: 700; 
+  margin-bottom: 15px; 
+  color: #ffffff;          /* "Биздин" деген сөз кара эмес, ак түстө жаркырап турат */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;               /* Сөздөрдүн ортосундагы аралык */
+}
+
+.portfolio-hero-content .gold-text { 
+  color: #c5a880 !important; 
+  font-size: 42px;         /* Көлөмүн "Биздин" деген сөз менен бирдей кылдык */
+  font-weight: 700;
+}
+
+.portfolio-hero-content p {
+  font-size: 18px;
+  color: #cccccc;
+  font-weight: 300;
+}
+
+/* 2. ФИЛЬТР БАСКЫЧТАРЫ (ФИЛЬТРЛЕЙ ТУРГАН КНОПКАЛАР) */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.filter-btn {
+  padding: 12px 28px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: #bc9c65;
+  color: #bc9c65;
+}
+
+.filter-btn.active {
+  background-color: #bc9c65;
+  border-color: #bc9c65;
+  color: #000000; /* Активдүү кнопка даана көрүнөт */
+  box-shadow: 0 4px 15px rgba(188, 156, 101, 0.3);
+}
+
+/* 3. ДОЛБООРЛОРДУН ТИЗМЕСИ (CONTAINER & CARDS) */
 .portfolio-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 60px;
+  padding: 0 20px;
 }
 
 .portfolio-card-item {
   display: flex;
-  background-color: #1a1a1a;
+  background-color: #141414; /* Карточканын өзүнүн фону */
+  border: 1px solid #222222;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: #333333;
 }
 
 .portfolio-card-item.reverse {
   flex-direction: row-reverse;
 }
 
-/* Визуалдык блок (Видео жана Сүрөт үчүн бирдей өлчөм) */
+/* ================================================== */
+/* МЕНЕН ОҢДОЛГОН ЖАНА КАЛЫБЫНА КЕЛТИРИЛГЕН МЕДИА БӨЛҮК */
+/* ================================================== */
 .portfolio-visual-block {
-  flex: 1;
-  min-width: 50%;
-  height: 350px; /* Бийиктиги катып турат, ошондо кара боштук болбойт */
-  background-color: #000;
+  flex: 1 !important;
+  min-width: 50% !important;
+  height: 400px !important;
+  background-color: #000000 !important; /* Эч качан ак түс болбойт */
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
 }
 
-.portfolio-visual-block img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+.portfolio-visual-block img,
 .portfolio-visual-block iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border: none !important;
 }
 
-/* Тексттер үчүн стилдер */
+/* -------------------------------------------------- */
+/* КАРТОЧКАНЫН ИЧИНДЕГИ ТЕКСТТЕРДИ ТАК ЖАНА ДААНА ОҢДОО */
+/* -------------------------------------------------- */
 .portfolio-text-block {
   flex: 1;
-  padding: 40px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #141414 !important; /* Кара фонго сиңбей, карточка менен бирдей болот */
 }
 
+/* Үстүндөгү кичинекей категория жазуусу (Мисалы: REMONT) */
 .project-tag {
-  color: #bc9c65;
+  color: #bc9c65 !important; /* Өчпөй турган ачык алтын түс */
   text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 15px !important; /* Бир аз чоңойтулду */
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+  display: inline-block;
 }
 
+/* ЭҢ МААНИЛҮҮСҮ: Негизги долбоордун аты (Мисалы: ждлорп) */
 .portfolio-text-block h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.project-loc {
-  color: #aaa;
+  font-size: 38px !important; /* Текст даана, чоң жана сыймыктуу көрүнөт */
+  font-weight: 700 !important;
+  color: #ffffff !important;  /* Кара фондо жүз пайыз көрүнүүчү ТАЗА АК түс */
   margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
+/* Локация (Дареги көрсөтүлгөн жер) */
+.project-loc {
+  color: #bc9c65 !important; /* Муну дагы алтын түскө байлайбыз */
+  font-size: 16px !important;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ортодогу алтын сызык */
 .gold-divider {
-  width: 50px;
-  height: 2px;
-  background-color: #bc9c65;
-  margin-bottom: 20px;
+  width: 70px;
+  height: 3px; /* Бир аз калыңыраак кылынды */
+  background-color: #bc9c65 !important; /* Алтын өңү */
+  margin-bottom: 25px;
 }
 
+/* Төмөнкү кыскача маалымат тексти */
 .project-description {
-  color: #ccc;
-  line-height: 1.6;
+  color: #e0e0e0 !important; /* Караңгыда калбаган, абдан жакшы окулган ачык боз түс */
+  line-height: 1.7;
+  font-size: 16px !important;
+  font-weight: 400;
 }
 
-/* Мобилдик телефондорго ылайыкташтыруу */
-@media (max-width: 768px) {
+/* АДАПТИВДҮҮЛҮК (МОБИЛДИК ТЕЛЕФОНДОР ҮЧҮН) */
+@media (max-width: 992px) {
   .portfolio-card-item, .portfolio-card-item.reverse {
     flex-direction: column;
   }
+  
   .portfolio-visual-block {
-    height: 250px;
+    min-width: 100% !important;
+    height: 300px !important;
+  }
+  
+  .portfolio-text-block {
+    padding: 30px;
+  }
+  
+  .portfolio-hero-content h1 {
+    font-size: 36px;
   }
 }
