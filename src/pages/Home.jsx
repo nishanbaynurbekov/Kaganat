@@ -57,7 +57,9 @@ const Home = () => {
             Биз сиздин үйүңүзгө кооздук, заманбап стил жана бейпилдик тартуулайбыз.
           </p>
           <div className="hero-buttons">
-            <a href="https://wa.me/YOUR_NUMBER" className="btn-primary" target="_blank" rel="noreferrer">Акысыз консультация</a>
+            <a href="https://wa.me/996223544667" className="btn-primary" target="_blank" rel="noreferrer">
+  Акысыз консультация
+</a>
             <a href="portfolio" className="btn-secondary">Биздин жумуштар</a>
           </div>
         </div>
