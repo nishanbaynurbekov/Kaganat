@@ -1,149 +1,94 @@
 .portfolio-page {
-  background-color: #111111;
-  color: #ffffff;
-  min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-  padding-bottom: 100px;
+  padding: 40px 20px;
+  background-color: #111;
+  color: #fff;
 }
 
-/* Баннер */
-.portfolio-hero {
-  position: relative;
-  height: 250px;
-  background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1920');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio-overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(17, 17, 17, 0.85);
-}
-
-.portfolio-hero-content { position: relative; z-index: 2; text-align: center; }
-.portfolio-hero-content h1 { 
-  font-size: 42px;         /* Эки сөздү тең бирдей чоң жана даана кылдык */
-  font-weight: 700; 
-  margin-bottom: 15px; 
-  color: #ffffff;          /* "Биздин" деген сөз кара эмес, ак түстө жаркырап турат */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;               /* Сөздөрдүн ортосундагы аралык */
-}
-
-/* "Жумуштар" деген алтын түстөгү сөз үчүн */
-.portfolio-hero-content .gold-text { 
-  color: #c5a880 !important; 
-  font-size: 42px;         /* Көлөмүн "Биздин" деген сөз менен бирдей кылдык */
-  font-weight: 700;
-}
-
-/* Астындагы кыскача сыпаттама текст */
-.portfolio-hero-content p { 
-  color: #dddddd;          /* Текстти бир аз ачыгыраак кылып, окулушун жакшырттык */
-  font-size: 16px; 
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-/* Кнопкалар */
-.portfolio-filters { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
-.filter-btn {
-  background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff;
-  padding: 10px 24px; font-size: 14px; border-radius: 30px; cursor: pointer; transition: all 0.3s;
-}
-.filter-btn:hover, .filter-btn.active {
-  background-color: #c5a880; border-color: #c5a880; color: #111111;
-  box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
-}
-
-/* Контейнер */
 .portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  padding: 0 8%;
+  gap: 50px;
 }
 
-/* Проекттин чоң карточкасы */
 .portfolio-card-item {
   display: flex;
-  align-items: center;
-  background-color: #161616;
-  border-radius: 16px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(197, 168, 128, 0.05);
-  min-height: 380px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.portfolio-card-item.reverse { flex-direction: row-reverse; }
 
-/* Визуалдык блок */
+.portfolio-card-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Визуалдык блок (Видео жана Сүрөт үчүн бирдей өлчөм) */
 .portfolio-visual-block {
   flex: 1;
-  width: 50%;
-  height: 380px;
+  min-width: 50%;
+  height: 350px; /* Бийиктиги катып турат, ошондо кара боштук болбойт */
   background-color: #000;
 }
-.video-wrapper iframe {
+
+.portfolio-visual-block img {
   width: 100%;
   height: 100%;
-}
-.img-wrapper img {
-  width: 100%; height: 100%; object-fit: cover;
+  object-fit: cover;
 }
 
-/* Текст бөлүгү */
+.portfolio-visual-block iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Тексттер үчүн стилдер */
 .portfolio-text-block {
   flex: 1;
-  width: 50%;
-  padding: 50px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
+
 .project-tag {
-  color: #c5a880; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;
-}
-.portfolio-text-block h2 { 
-  font-size: 28px; 
-  margin-bottom: 8px; 
-  font-weight: 600;
-  color: #ffffff; /* Бул жер ак түстө болуп, аталышы даана көрүнөт */
+  color: #bc9c65;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.project-loc { 
-  color: #c5a880; /* Даректин түсүн алтын түскө жакындатып, жарык кылдык */
-  font-size: 14px; 
-  margin-bottom: 15px; 
-  font-weight: 500;
+.portfolio-text-block h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.project-description { 
-  color: #e0e0e0; /* Негизги текстти бир аз ачык боз кылып, окуганга жеңил кылдык */
-  font-size: 14px; 
-  line-height: 1.6; 
-  font-weight: 300; 
+.project-loc {
+  color: #aaa;
+  margin-bottom: 15px;
 }
 
-/* Лоадер (Күтүү спиннери) */
-.portfolio-loading {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; color: #fff;
+.gold-divider {
+  width: 50px;
+  height: 2px;
+  background-color: #bc9c65;
+  margin-bottom: 20px;
 }
-.spinner {
-  width: 40px; height: 40px; border: 4px solid rgba(255, 255, 255, 0.1); border-top-color: #c5a880;
-  border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
 
-/* Адаптация (Мобилдик телефондор үчүн) */
-@media (max-width: 992px) {
-  .portfolio-card-item, .portfolio-card-item.reverse { flex-direction: column; }
-  .portfolio-visual-block, .portfolio-text-block { width: 100%; }
-  .portfolio-container { padding: 0 20px; gap: 40px; }
-  .portfolio-visual-block { height: 280px; }
-  .portfolio-text-block { padding: 30px; }
+.project-description {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Мобилдик телефондорго ылайыкташтыруу */
+@media (max-width: 768px) {
+  .portfolio-card-item, .portfolio-card-item.reverse {
+    flex-direction: column;
+  }
+  .portfolio-visual-block {
+    height: 250px;
+  }
 }
