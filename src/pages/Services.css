@@ -1,0 +1,228 @@
+.services-page-container {
+  background-color: #111111;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Үстүнкү чакан баннер */
+.services-page-hero {
+  position: relative;
+  height: 250px;
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.services-page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.7), #111111);
+}
+
+.services-page-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.services-page-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 10px;
+}
+
+.gold-text-span {
+  color: #c5a880 !important;
+}
+
+.services-page-subtitle {
+  color: #aaaaaa;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Кызматтардын тизмеси */
+.services-page-list {
+  padding: 60px 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Карточкалардын ортосундагы бирдей аралык */
+  box-sizing: border-box;
+}
+
+/* БИРДЕЙ БИЙИКТИККЕ КЕЛТИРҮҮЧҮ НЕГИЗГИ КАРТОЧКА */
+.services-page-item {
+  display: flex;
+  align-items: stretch; /* Ичиндеги элементтерди өйдөдөн ылдый карай тегиз созот (бирдей бийиктик кылат) */
+  justify-content: space-between;
+  gap: 40px;
+  background-color: #161616;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(197, 168, 128, 0.05);
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 380px; /* Эң аз дегенде ушул бийиктикте болот, баары теңделет */
+}
+
+.services-page-item:hover {
+  border-color: rgba(197, 168, 128, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Шахмат тартиби */
+.services-page-item.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* Текст блогу */
+.service-page-info-box {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Тексттер ортодо түз турсун */
+}
+
+.service-page-icon {
+  color: #c5a880;
+  margin-bottom: 15px;
+}
+
+.service-page-info-box h2 {
+  font-size: 24px;
+  color: #ffffff !important;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-main-desc {
+  color: #cccccc;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* Ички тизмелер */
+.service-features-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Сүрөт менен аралашып кетпеши үчүн аралык */
+  gap: 10px;
+}
+
+.feature-check-icon {
+  color: #c5a880;
+  flex-shrink: 0;
+}
+
+.feature-item span {
+  color: #aaaaaa;
+  font-size: 13.5px;
+}
+
+/* СҮРӨТ БЛОГУН КАТУУ КӨЗӨМӨЛГӨ АЛУУ */
+.service-page-visual-box {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-card-with-img {
+  width: 100%;
+  height: 100%; /* Карточканын бийиктигине толук шайкеш келет */
+  min-height: 280px;
+  max-height: 320px; /* Ашыкча чоңоюп кетпейт */
+  border-radius: 10px;
+  overflow: hidden; /* Сүрөт такыр сыртка чыкпайт! */
+  position: relative;
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Сүрөттүн пропорциясын бузбай, кутучага идеалдуу отургузат */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.visual-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(17, 17, 17, 0.8), rgba(0, 0, 0, 0.1));
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.visual-card-with-img .visual-number {
+  font-size: 45px;
+  font-weight: 800;
+  color: rgba(197, 168, 128, 0.7);
+  line-height: 1;
+}
+
+.services-page-item:hover .service-img {
+  transform: scale(1.05);
+}
+
+/* ========================================== */
+/* МОБИЛДИК ТЕЛЕФОНДОР ҮЧҮН ТОЛУК АДАПТАЦИЯ   */
+/* ========================================== */
+@media (max-width: 900px) {
+  .services-page-item, .services-page-item.reverse-layout {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 25px;
+    min-height: auto; /* Телефондо бийиктикти эркин кое беребиз */
+  }
+
+  .service-page-info-box, .service-page-visual-box {
+    width: 100%;
+  }
+
+  .service-features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-card-with-img {
+    height: 200px;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-page-list {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+  
+  .services-page-title {
+    font-size: 30px;
+  }
+}

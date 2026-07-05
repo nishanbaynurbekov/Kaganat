@@ -1,0 +1,276 @@
+/* ==========================================================================
+   ABOUT PAGE - KAGANAT PREMIUM STYLES
+   ========================================================================== */
+
+.about-page {
+  background-color: #111111;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 80px;
+}
+
+/* 1. Үстүнкү баннер (Hero Section) */
+.about-hero {
+  position: relative;
+  height: 250px;
+  background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(17, 17, 17, 0.85);
+}
+
+.about-hero-content { 
+  position: relative; 
+  z-index: 2; 
+  text-align: center; 
+}
+
+.about-hero-content h1 { 
+  font-size: 42px; 
+  font-weight: 700; 
+  margin-bottom: 15px; 
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* "Жөнүндө" деген сөздүн өлчөмүн теңөө */
+.about-hero-content h1 .gold-text { 
+  color: #c5a880 !important; 
+  font-size: 42px !important; 
+  font-weight: 700 !important;
+}
+
+.about-hero-content p { 
+  color: #dddddd; 
+  font-size: 16px; 
+}
+
+/* 2. Негизги маалымат блогу (Сүрөт + Текст) */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 80px 8%;
+}
+
+.about-image-block {
+  position: relative;
+  flex: 1;
+}
+
+.about-image-block img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.image-gold-frame {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #c5a880;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.about-text-block {
+  flex: 1;
+}
+
+.about-subtitle {
+  color: #c5a880;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-text-block h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* "искусствого" деген сөздүн өлчөмүн теңөө */
+.about-text-block h2 .gold-text { 
+  color: #c5a880 !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+}
+
+.gold-divider { 
+  width: 60px; 
+  height: 2px; 
+  background-color: #c5a880; 
+  margin-bottom: 25px; 
+}
+
+.gold-divider.center { 
+  margin: 20px auto; 
+}
+
+.about-text-block p {
+  color: #cccccc;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* 3. Статистика блогу */
+.about-stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  background-color: #161616;
+  padding: 50px 8%;
+  border-top: 1px solid rgba(197, 168, 128, 0.1);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+.stat-card { 
+  text-align: center; 
+}
+
+.stat-card h3 { 
+  color: #c5a880; 
+  font-size: 36px; 
+  font-weight: 700; 
+  margin-bottom: 10px; 
+}
+
+.stat-card p { 
+  color: #aaaaaa; 
+  font-size: 14px; 
+  font-weight: 400; 
+}
+
+/* 4. Биздин Баалуулуктар (Принциптер) */
+.values-section { 
+  padding: 80px 8%; 
+  text-align: center; 
+}
+
+.values-title h2 { 
+  font-size: 32px; 
+  font-weight: 700; 
+  color: #ffffff; 
+}
+
+/* "Принциптерибиз" деген сөздүн өлчөмүн теңөө */
+.values-title h2 .gold-text { 
+  color: #c5a880 !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+}
+
+.values-grid { 
+  display: flex; 
+  justify-content: space-between; 
+  gap: 40px; 
+  margin-top: 50px; 
+}
+
+.value-item {
+  background-color: #161616;
+  padding: 40px 30px;
+  border-radius: 12px;
+  flex: 1;
+  transition: transform 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(197, 168, 128, 0.2);
+}
+
+.value-icon { 
+  font-size: 40px; 
+  margin-bottom: 20px; 
+}
+
+.value-item h4 { 
+  font-size: 20px; 
+  color: #ffffff; 
+  margin-bottom: 15px; 
+  font-weight: 600; 
+}
+
+.value-item p { 
+  color: #aaaaaa; 
+  font-size: 14px; 
+  line-height: 1.6; 
+  font-weight: 300; 
+}
+
+/* ==========================================================================
+   АДАПТАЦИЯ (Мобилдик телефондор үчүн)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .about-hero-content h1,
+  .about-hero-content h1 .gold-text {
+    font-size: 32px !important;
+  }
+  
+  .about-section { 
+    flex-direction: column; 
+    gap: 50px; 
+    padding: 50px 20px; 
+  }
+  
+  .about-image-block img { 
+    height: 320px; 
+  }
+  
+  .image-gold-frame { 
+    left: -10px; 
+    top: 10px; 
+  }
+  
+  .about-text-block h2,
+  .about-text-block h2 .gold-text {
+    font-size: 28px !important;
+    text-align: center;
+  }
+  
+  .about-hero-content h1, 
+  .values-title h2,
+  .values-title h2 .gold-text {
+    font-size: 28px !important;
+  }
+  
+  .about-stats-container { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; 
+    padding: 40px 20px; 
+  }
+  
+  .values-grid { 
+    flex-direction: column; 
+    gap: 30px; 
+  }
+}

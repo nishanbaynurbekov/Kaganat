@@ -1,0 +1,332 @@
+/* Базалык нөлдөө жана жалпы стилдер */
+.premium-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background-color: #111111; /* Премиум кара фон */
+  border-bottom: 1px solid #c5a880; /* Назик алтын сызык */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%; /* Логотип тегерек болушу үчүн */
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.gold-text {
+  color: #c5a880;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.white-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* Навигация линктери (Компьютер үчүн) */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff; /* Жаркыраган аппак түс */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-icon {
+  color: #c5a880; /* Иконкалар үчүн алтын түс */
+  transition: transform 0.3s ease;
+}
+
+/* Ховер эффекттер (Компьютер үчүн) */
+.nav-item:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-item:hover span {
+  color: #c5a880;
+  text-shadow: 0 0 10px rgba(197, 168, 128, 0.4);
+}
+
+/* Компьютерде линктердин жанындагы иконкаларды жашыруу (Минимализм үчүн) */
+@media (min-width: 769px) {
+  .nav-icon {
+    display: none;
+  }
+}
+
+/* Гамбургер топчусунун стили */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 2px;
+  background-color: #c5a880;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* ========================================== */
+/* МОБИЛДИК ТЕЛЕФОНДОР ҮЧҮН ТОЛУК СТИЛДЕР    */
+/* ========================================== */
+@media (max-width: 768px) {
+  .premium-header {
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: block; /* Телефондо үч сызык көрүнөт */
+  }
+
+  /* Телефондогу менюнун жайгашуусу (Ылдый түшмө) */
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    top: 76px;
+    height: calc(100vh - 76px);
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Иконкаларды солго тегиздөө */
+    width: 100%;
+    gap: 35px;
+    padding-top: 40px;
+    padding-left: 15%; /* Сол жактан кооз боштук */
+    transform: translateY(-105%); /* Жабык кезде көрүнбөйт */
+    transition: transform 0.4s ease-in-out;
+    border-bottom: 1px solid #c5a880;
+    box-sizing: border-box;
+  }
+
+  /* Меню ачылгандагы класс */
+  .nav-links.active {
+    transform: translateY(0%);
+  }
+
+  .nav-item {
+    font-size: 22px; /* Телефондо чоң жана ыңгайлуу жазуу */
+    font-weight: 600;
+    width: 80%;
+  }
+
+  .nav-icon {
+    display: block; /* Телефондо иконкалар сөзсүз көрүнөт */
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Гамбургер басылганда Х белгисине айлануу анимациясы */
+  .hamburger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  .hamburger.toggle .line2 {
+    opacity: 0;
+  }
+  .hamburger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+}/* Базалык нөлдөө жана жалпы стилдер */
+.premium-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Телефондордо кысылып калбашы үчүн боштукту туураладык */
+  background-color: #111111;
+  border-bottom: 1px solid #c5a880;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0; /* Телефондун экранында бул блок такыр кысылбашы керек */
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.gold-text {
+  color: #c5a880;
+  font-size: 16px; /* Телефондо батыш үчүн бир аз кичирейтилди */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.white-text {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+/* Навигация линктери (Компьютер үчүн) */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-icon {
+  color: #c5a880;
+  transition: transform 0.3s ease;
+}
+
+/* Компьютерде иконкаларды жашыруу */
+@media (min-width: 769px) {
+  .nav-icon {
+    display: none;
+  }
+  .nav-item:hover .nav-icon {
+    transform: scale(1.1);
+  }
+  .nav-item:hover span {
+    color: #c5a880;
+    text-shadow: 0 0 10px rgba(197, 168, 128, 0.4);
+  }
+}
+
+/* Гамбургер топчусунун стили */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-shrink: 0; /* Топчу кысылып кетпеши керек */
+  padding: 5px;   /* Басканга оңой болушу үчүн */
+}
+
+.hamburger div {
+  width: 25px;
+  height: 2px;
+  background-color: #c5a880;
+  margin: 5px 0; /* Сызыктардын ортосундагы аралыкты тактадык */
+  transition: all 0.3s ease;
+}
+/* ========================================== */
+/* МОБИЛДИК ТЕЛЕФОНДОР ҮЧҮН ТОЛУК ОҢДОЛГОН СТИЛДЕР */
+/* ========================================== */
+@media (max-width: 768px) {
+  .premium-header {
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: block; /* Телефондо үч сызык көрүнөт */
+  }
+
+  /* ТЕЛЕФОНДОГУ МЕНЮ: Жөнөкөй маалда такыр көрүнбөйт */
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    top: 71px; /* Хедердин так астынан башталат */
+    height: calc(100vh - 71px);
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 35px;
+    padding-top: 40px;
+    padding-left: 15%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #c5a880;
+
+    /* ЭҢ НЕГИЗГИ ӨЗГӨРТҮҮ: Жөн маалда такыр көрүнбөйт жана иштебейт */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-20px); /* Жай гана ылдый түшүү эффекти үчүн */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* ҮЧ СЫЗЫКТЫ БАСКАНДА АЧЫЛА ТУРГАН КЛАСС */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0); /* Өз ордуна келет */
+  }
+
+  .nav-item {
+    font-size: 20px;
+    font-weight: 600;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Гамбургер басылганда Х белгисине айлануу анимациясы */
+  .hamburger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  .hamburger.toggle .line2 {
+    opacity: 0;
+  }
+  .hamburger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+}
