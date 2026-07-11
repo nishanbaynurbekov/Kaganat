@@ -1,28 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
 import Loading from '../components/Loading/Loading';
+import { supabase } from '../components/supabase/supabase';
+import Like from '../components/supabase/Like';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
   const [loading, setLoading] = useState(true);
+  // const [ product, setProduct ] = useState([])
 
-  const API_URL = "https://69e59424ce4e908a155e2650.mockapi.io/Bhh/product";
+useEffect (() => {
+getProducts()
 
-  // 1. Базадан маалыматты таза тартып алуу
-  useEffect(() => {
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        setProjects(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Ката кетти:", err);
-        setLoading(false);
-      });
-  }, []);
+const API_URL = supabase
+ 
+.channel('products-changes')
+.on('postgres_changes', 
+  { event: 'UPDATE', schema: 'public', 
+    table: 'products'}, 
+    (payload) => {
+      setProjects(currentProducts =>  currentProducts.map(p => 
+        p.id === payload.nev.id? payload.new : p
+      )
+      )
+    }
+)
+.subscribe()
 
+return () => {
+  supabase.removeChannel(API_URL)
+}
+}, [])
+
+ async function getProducts() {
+  const { data, error } = await supabase
+  .from('products')
+  .select("*")
+  .order('id', {ascending: true})
+
+  if (error) {
+    console.log('kata', error)
+    }
+    else{
+      setProjects(data)
+    }
+      setLoading(false)
+ }
   const categories = [
     { id: 'all', name: 'Баары' },
     { id: 'remont', name: 'Евро Ремонт' },
@@ -98,6 +122,8 @@ const Portfolio = () => {
                 <p className="project-loc">📍 {project.location}</p>
                 <div className="gold-divider"></div>
                 <p className="project-description">{project.text}</p>
+                <Like productId={project.id}
+                initialLike={project.like}/>
               </div>
 
             </div>

@@ -204,6 +204,35 @@
   font-size: 16px !important;
   font-weight: 400;
 }
+.project-like-section {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.like-btn {
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  color: #fff; /* Эгер фон кара болсо текст ак көрүнөт */
+}
+
+.like-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ff4757;
+}
+
+.like-count {
+  font-weight: bold;
+}
 
 /* АДАПТИВДҮҮЛҮК (МОБИЛДИК ТЕЛЕФОНДОР ҮЧҮН) */
 @media (max-width: 992px) {
